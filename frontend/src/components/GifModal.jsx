@@ -1,9 +1,13 @@
 import { useState } from 'react';
 
-function GifModal({ isOpen, onClose, gifUrl, title = 'Films Forever', onCloseComplete }) {
+function GifModal({ isOpen, onClose, gifUrl, title = 'FILMS FOREVER', onCloseComplete }) {
   if (!isOpen) return null;
 
   const handleClose = () => {
+    onClose();
+  };
+
+  const handleContinue = () => {
     onClose();
     if (onCloseComplete) {
       onCloseComplete();
@@ -28,10 +32,10 @@ function GifModal({ isOpen, onClose, gifUrl, title = 'Films Forever', onCloseCom
             <img src={gifUrl} alt={title} className="max-w-full h-auto rounded" />
           </div>
           <button
-            onClick={handleClose}
+            onClick={handleContinue}
             className="mt-6 w-full btn-primary bg-blue-600 hover:bg-blue-700 text-white"
           >
-            Close
+            Continue
           </button>
         </div>
       </div>

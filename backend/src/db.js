@@ -5,7 +5,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL,
+  connectionTimeoutMillis: 10000, // 10 seconds
+  idleTimeoutMillis: 30000, // 30 seconds
+  max: 20, // max clients in pool
+  ssl: {
+    rejectUnauthorized: false // Required for Supabase connections
+  }
 });
 
 pool.on('error', (err) => {

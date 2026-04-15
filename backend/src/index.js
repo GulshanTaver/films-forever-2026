@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { Server as SocketIOServer } from 'socket.io';
 import http from 'http';
+import authRoutes from './routes/auth.js';
 
 // Load environment variables
 dotenv.config();
@@ -30,13 +31,13 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Films Forever API is running' });
 });
 
-// TODO: Import and use routes
-// import authRoutes from './routes/auth.js';
+// Routes
+app.use('/api/auth', authRoutes);
+// TODO: Import and use additional routes
 // import filmRoutes from './routes/films.js';
 // import ratingRoutes from './routes/ratings.js';
 // import watchlistRoutes from './routes/watchlist.js';
 // import recommendationRoutes from './routes/recommendations.js';
-// app.use('/api/auth', authRoutes);
 // app.use('/api/films', filmRoutes);
 // app.use('/api/ratings', ratingRoutes);
 // app.use('/api/watchlist', watchlistRoutes);

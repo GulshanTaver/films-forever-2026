@@ -34,8 +34,8 @@ function Signup() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <div className="flex justify-center items-center py-8">
+      <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-md">
         <h1 className="text-3xl font-bold mb-6 text-center">Sign Up</h1>
 
         {error && <div className="bg-red-100 text-red-700 p-3 rounded mb-4">{error}</div>}

@@ -18,18 +18,12 @@ function Header() {
         onCloseComplete={() => navigate('/signup')}
       />
       <header className="bg-gray-900 text-white shadow-lg">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold">
-          🎬 Films Forever
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-y-2">
+        <Link to="/" className="text-lg sm:text-2xl font-bold">
+        🎬 FILMS FOREVER
         </Link>
 
-        <ul className="flex gap-4">
-          <li>
-            <Link to="/" className="hover:text-gray-300">
-              Home
-            </Link>
-          </li>
-
+        <ul className="flex flex-wrap items-center gap-2 sm:gap-4">
           {user ? (
             <>
               <li>
@@ -59,7 +53,7 @@ function Header() {
               <li>
                 <Link
                   to="/login"
-                  className="bg-blue-600 px-3 py-1 rounded hover:bg-blue-700"
+                  className="inline-flex items-center justify-center bg-blue-600 px-3 py-1 rounded hover:bg-blue-700 border-none cursor-pointer text-white"
                 >
                   Login
                 </Link>
@@ -67,7 +61,7 @@ function Header() {
               <li>
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="bg-green-600 px-3 py-1 rounded hover:bg-green-700 border-none cursor-pointer text-white"
+                  className="inline-flex items-center justify-center bg-green-600 px-3 py-1 rounded hover:bg-green-700 border-none cursor-pointer text-white"
                 >
                   Sign Up
                 </button>
